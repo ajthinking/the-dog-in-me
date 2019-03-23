@@ -5,7 +5,7 @@ use Symfony\Component\Process\Exception\ProcessFailedException;
 
 Route::get('/', function () {
     $process = new Process([
-        'python',
+        '/home/forge/anaconda3/bin/python',
         base_path('python/classify.py')
     ]);
     
@@ -17,7 +17,6 @@ Route::get('/', function () {
     }
     
     echo $process->getOutput();
-    //return view('welcome');
 });
 
 
