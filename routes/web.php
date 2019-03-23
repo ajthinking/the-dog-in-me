@@ -1,16 +1,25 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use Symfony\Component\Process\Process;
+use Symfony\Component\Process\Exception\ProcessFailedException;
 
 Route::get('/', function () {
-    return view('welcome');
+    $process = new Process([
+        'python',
+        base_path('python/classify.py')
+    ]);
+    
+    $process->run();
+    
+    // executes after the command finishes
+    if (!$process->isSuccessful()) {
+        throw new ProcessFailedException($process);
+    }
+    
+    echo $process->getOutput();
+    //return view('welcome');
 });
+
+
+
+
