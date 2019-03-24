@@ -19,6 +19,9 @@ Route::get('/', function () {
     echo $process->getOutput();
 });
 
+/* TODO
+- Setup socialite (no registration just grab the avatar)
+- Pass the avatar url to the python script
+- Do a blog post
 
-
-
+*/
