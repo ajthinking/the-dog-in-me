@@ -37013,7 +37013,7 @@ var staticRenderFns = [
           "flex flex-col items-center mx-auto max-w-md bg-indigo-dark shadow-lg mt-8 p-4 text-white font-black"
       },
       [
-        _c("h1", [_vm._v("Congratulations Anders, you are a Bengal!")]),
+        _c("h1", [_vm._v("you are 38% Bengal!")]),
         _vm._v(" "),
         _c("img", { attrs: { src: "https://dogecoin.com/imgs/doge.png" } }),
         _vm._v(" "),
@@ -37031,7 +37031,7 @@ var staticRenderFns = [
                 staticClass:
                   "rounded px-8 py-4 bg-yellow-dark text-black m-2 w-full hover:bg-yellow"
               },
-              [_c("span", [_vm._v("make AI uncool again")])]
+              [_c("span", [_vm._v("how this app was built")])]
             )
           ]
         ),
