@@ -19,7 +19,7 @@ with open(dir_path + '/temp_image.jpeg', 'wb') as handler:
 
 temp_image = open_image(dir_path + '/temp_image.jpeg')
 
-pred_class,pred_idx,outputs = learn.predict(anders)
+pred_class,pred_idx,outputs = learn.predict(temp_image)
 
 result = {}
 result['pred_class'] = str(pred_class)
