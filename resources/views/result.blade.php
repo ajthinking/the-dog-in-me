@@ -9,13 +9,11 @@
         
     </head>
     <body>
-        <script>
-            window.user = {!! $user->toJson() !!};
-            window.result = JSON.decode({!! $result !!});
-        </script>
-
         <div id="app">
-            <show-result></show-result>
+            <show-result 
+                :accuracy={{$accuracy}}
+                :pred_class="'{{$pred_class}}'"
+            ></show-result>
         </div>        
         <script src="js/app.js"></script>
     </body>

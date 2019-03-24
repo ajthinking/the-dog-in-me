@@ -14,8 +14,8 @@ Route::get('/classify', function () {
     $user = Session::get('user');
 
     $process = new Process([
-        '/home/forge/anaconda3/bin/python',
-        base_path('python/classify.py'),
+        (env('APP_ENV') == 'local' ? 'python' : '/home/forge/anaconda3/bin/python'),
+        (env('APP_ENV') == 'local' ? base_path('python/classify_local.py') : base_path('python/classify.py')),
         $user->avatar
     ]);
     
@@ -26,9 +26,12 @@ Route::get('/classify', function () {
         throw new ProcessFailedException($process);
     }
 
+    $cleaned = json_decode(str_replace('\n', '', $process->getOutput()));
+
     return view('result')->with([
-        "user" => $user,
-        "result" => $process->getOutput()
+        "avatar" => $user->avatar,
+        "accuracy" => $cleaned->accuracy,
+        "pred_class" => $cleaned->pred_class
     ]);
 });
 

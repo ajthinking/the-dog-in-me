@@ -1839,7 +1839,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['accuracy', 'pred_class'],
+  computed: {
+    imgPath: function imgPath() {
+      return 'images/' + this.pred_class + '.jpg';
+    } // {{window.result.accuracy}} % {{window.result.pred_class}}
+
+  }
+});
 
 /***/ }),
 
@@ -36999,7 +37007,34 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "div",
+    {
+      staticClass:
+        "flex flex-col items-center mx-auto max-w-md bg-indigo-dark shadow-lg mt-8 p-4 text-white font-black"
+    },
+    [
+      _c("h1", [
+        _vm._v(
+          "you are " +
+            _vm._s(_vm.accuracy) +
+            "% " +
+            _vm._s(_vm.pred_class) +
+            "!"
+        )
+      ]),
+      _vm._v(" "),
+      _c("img", { attrs: { src: _vm.imgPath } }),
+      _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
+      _c("div", { staticClass: "text-xs font-normal mt-4" }, [
+        _vm._v(
+          "\n        Powered by math™ and science™. Special thanks to fast.ai\n    "
+        )
+      ])
+    ]
+  )
 }
 var staticRenderFns = [
   function() {
@@ -37007,40 +37042,20 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c(
-      "div",
+      "a",
       {
-        staticClass:
-          "flex flex-col items-center mx-auto max-w-md bg-indigo-dark shadow-lg mt-8 p-4 text-white font-black"
+        staticClass: "flex flex-col mx-auto w-full items-center no-underline",
+        attrs: { href: "/login/facebook" }
       },
       [
-        _c("h1", [_vm._v("you are 38% Bengal!")]),
-        _vm._v(" "),
-        _c("img", { attrs: { src: "https://dogecoin.com/imgs/doge.png" } }),
-        _vm._v(" "),
         _c(
-          "a",
+          "button",
           {
             staticClass:
-              "flex flex-col mx-auto w-full items-center no-underline",
-            attrs: { href: "/login/facebook" }
+              "rounded px-8 py-4 bg-yellow-dark text-black m-2 w-full hover:bg-yellow"
           },
-          [
-            _c(
-              "button",
-              {
-                staticClass:
-                  "rounded px-8 py-4 bg-yellow-dark text-black m-2 w-full hover:bg-yellow"
-              },
-              [_c("span", [_vm._v("how this app was built")])]
-            )
-          ]
-        ),
-        _vm._v(" "),
-        _c("div", { staticClass: "text-xs font-normal mt-4" }, [
-          _vm._v(
-            "\n        Powered by math™ and science™. Special thanks to fast.ai\n    "
-          )
-        ])
+          [_c("span", [_vm._v("how this app was built")])]
+        )
       ]
     )
   }
@@ -49376,7 +49391,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!*********************************************************************************!*\
   !*** ./resources/js/components/CallToAction.vue?vue&type=template&id=d453350c& ***!
   \*********************************************************************************/
-/*! no static exports found */
+/*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
