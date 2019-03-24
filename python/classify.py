@@ -1,5 +1,6 @@
 import os
 import sys
+import json
 
 from fastai.vision import *
 
@@ -13,4 +14,8 @@ anders = open_image(dir_path + '/anders.jpg')
 
 pred_class,pred_idx,outputs = learn.predict(anders)
 
-print("This guy looks like", pred_class)
+result = {}
+result['pred_class'] = str(pred_class)
+result['accuracy'] = "{0:.0%}".format(outputs.max().item()) 
+
+print(json.dumps(result))
