@@ -4,6 +4,8 @@ import json
 
 from fastai.vision import *
 
+avatar = sys.argv[1]
+
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
 defaults.device = torch.device('cpu')
@@ -16,6 +18,7 @@ pred_class,pred_idx,outputs = learn.predict(anders)
 
 result = {}
 result['pred_class'] = str(pred_class)
+result['avatar'] = avatar
 result['accuracy'] = "{0:.0%}".format(outputs.max().item()) 
 
 print(json.dumps(result))

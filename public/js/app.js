@@ -36880,7 +36880,7 @@ var staticRenderFns = [
           {
             staticClass:
               "flex flex-col mx-auto w-full items-center no-underline",
-            attrs: { href: "/classify" }
+            attrs: { href: "/login/facebook" }
           },
           [
             _c(
@@ -36896,7 +36896,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("div", { staticClass: "text-xs font-normal mt-4" }, [
           _vm._v(
-            "\n        Made by @ajthinking. Powered by math™ and science™. Special thanks to fast.ai\n    "
+            "\n        Powered by math™ and science™. Special thanks to fast.ai\n    "
           )
         ])
       ]

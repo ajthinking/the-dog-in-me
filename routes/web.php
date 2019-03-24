@@ -3,14 +3,20 @@
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 
+Route::get('login/{provider}', 'Auth\LoginController@redirectToProvider');
+Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
+
 Route::get('/', function () {
     return view('welcome');
 });
 
 Route::get('/classify', function () {
+    $user = Session::get('user');
+
     $process = new Process([
         '/home/forge/anaconda3/bin/python',
-        base_path('python/classify.py')
+        base_path('python/classify.py'),
+        $user->avatar
     ]);
     
     $process->run();
