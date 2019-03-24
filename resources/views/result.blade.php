@@ -9,6 +9,11 @@
         
     </head>
     <body>
+        <script>
+            window.user = {!! $user->toJson() !!};
+            window.result = JSON.decode({!! $result !!});
+        </script>
+
         <div id="app">
             <show-result></show-result>
         </div>        
