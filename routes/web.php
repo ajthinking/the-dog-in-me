@@ -25,8 +25,11 @@ Route::get('/classify', function () {
     if (!$process->isSuccessful()) {
         throw new ProcessFailedException($process);
     }
-    
-    echo $process->getOutput();
+
+    return view('result')->with([
+        "user" => $user,
+        "result" => $process->getOutput()
+    ]);
 });
 
 /* TODO
