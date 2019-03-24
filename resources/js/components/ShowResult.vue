@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-col items-center mx-auto max-w-md bg-indigo-dark shadow-lg mt-8 p-4 text-white font-black">
-        <h1>you are {{ accuracy }}% {{ pred_class }}!</h1>
+        <h1>you are {{ Math.floor(accuracy*100) }}% {{ pred_class }}!</h1>
         <img :src="imgPath">
         <a href="/login/facebook" class="flex flex-col mx-auto w-full items-center no-underline">
             <button class="rounded px-8 py-4 bg-yellow-dark text-black m-2 w-full hover:bg-yellow">

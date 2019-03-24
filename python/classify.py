@@ -24,7 +24,7 @@ pred_class,pred_idx,outputs = learn.predict(temp_image)
 result = {}
 result['pred_class'] = str(pred_class)
 result['avatar'] = avatar
-result['accuracy'] = "{0:.0}".format(outputs.max().item()) 
+result['accuracy'] = outputs.max().item()
 
 os.remove(dir_path + '/temp_image.jpeg')
 

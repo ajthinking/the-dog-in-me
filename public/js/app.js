@@ -37017,7 +37017,7 @@ var render = function() {
       _c("h1", [
         _vm._v(
           "you are " +
-            _vm._s(_vm.accuracy) +
+            _vm._s(Math.floor(_vm.accuracy * 100)) +
             "% " +
             _vm._s(_vm.pred_class) +
             "!"
