@@ -37045,7 +37045,7 @@ var staticRenderFns = [
       "a",
       {
         staticClass: "flex flex-col mx-auto w-full items-center no-underline",
-        attrs: { href: "/login/facebook" }
+        attrs: { href: "https://twitter.com/ajthinking" }
       },
       [
         _c(
