@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col items-center mx-auto max-w-md bg-indigo-dark shadow-lg mt-8 p-4 text-white font-black">
+    <div class="flex flex-col items-center mx-auto max-w-md bg-indigo-dark mt-8 p-4 text-white font-black">
         <h1>you are {{ Math.floor(accuracy*100) }}% {{ pred_class }}!</h1>
         <img :src="imgPath">
         <a href="/login/facebook" class="flex flex-col mx-auto w-full items-center no-underline">
@@ -21,7 +21,7 @@
 
         computed: {
             imgPath: function() {
-                return 'images/' + this.pred_class + '.jpg';
+                return '/images/' + this.pred_class + '.jpg';
             }
         }
         

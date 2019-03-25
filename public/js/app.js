@@ -1843,7 +1843,7 @@ __webpack_require__.r(__webpack_exports__);
   props: ['accuracy', 'pred_class'],
   computed: {
     imgPath: function imgPath() {
-      return 'images/' + this.pred_class + '.jpg';
+      return '/images/' + this.pred_class + '.jpg';
     } // {{window.result.accuracy}} % {{window.result.pred_class}}
 
   }
@@ -36904,7 +36904,7 @@ var staticRenderFns = [
       "div",
       {
         staticClass:
-          "flex flex-col items-center mx-auto max-w-md bg-indigo-dark shadow-lg mt-8 p-4 text-white font-black"
+          "flex flex-col items-center mx-auto max-w-md bg-indigo-dark mt-8 p-4 text-white font-black"
       },
       [
         _c("h1", [_vm._v("Find Out Who You Really Are")]),
@@ -37011,7 +37011,7 @@ var render = function() {
     "div",
     {
       staticClass:
-        "flex flex-col items-center mx-auto max-w-md bg-indigo-dark shadow-lg mt-8 p-4 text-white font-black"
+        "flex flex-col items-center mx-auto max-w-md bg-indigo-dark mt-8 p-4 text-white font-black"
     },
     [
       _c("h1", [

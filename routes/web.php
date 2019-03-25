@@ -28,11 +28,14 @@ Route::get('/classify', function () {
 
     $cleaned = json_decode(str_replace('\n', '', $process->getOutput()));
 
+    return redirect('show/result/' . $cleaned->accuracy . '/' . $cleaned->pred_class);
+});
+
+Route::get('show/result/{accuracy}/{pred_class}', function($accuracy, $pred_class) {
     return view('result')->with([
-        "avatar" => $user->avatar,
-        "accuracy" => $cleaned->accuracy,
-        "pred_class" => $cleaned->pred_class
-    ]);
+        "accuracy" => $accuracy,
+        "pred_class" => $pred_class
+    ]);    
 });
 
 /* TODO
